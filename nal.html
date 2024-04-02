@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <script>
+    var index = 0;   //이미지에 접근하는 인덱스
+    window.onload = function(){
+        slideShow();
+    }
+    
+    function slideShow() {
+    var i;
+    var x = document.getElementsByClassName("slide1");  //slide1에 대한 dom 참조
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";   //처음에 전부 display를 none으로 한다.
+    }
+    index++;
+    if (index > x.length) {
+        index = 1;  //인덱스가 초과되면 1로 변경
+    }   
+    x[index-1].style.display = "block";  //해당 인덱스는 block으로
+    setTimeout(slideShow, 1000);   //함수를 4초마다 호출
+ 
+}
+</script>
+ 
+<body>
+<div >
+  <img id="cen_img" class="slide1" src="폭염아이콘.png" width=200 >
+  <img id="cen_img" class="slide1" src="비구름 아이콘.png" width=200>
+  <img id="cen_img" class="slide1" src="흐림 아이콘.png" width=200>
+  <img id="cen_img" class="slide1" src="맑음아이콘.png" width=200>
+  <img id="cen_img" class="slide1" src="비 우산 아이콘.png" width=150>
+  <img id="cen_img" class="slide1" src="바람 아이콘.png" width=150>
+
+</div>
+    
+
+
+<div class="api">
+    <!--<div class="container">링크를 클릭하여 OpenWeather API key를 발급받으세요. <a target="_blank" href="https://home.openweathermap.org/users/sign_up">무료 API KEY 발급하기</a>
+    </div>-->
+  </div>
+  <section class="top-banner">
+    <div>
+      <header>
+        <div class="date" >
+          <script>
+          date = new Date().toLocaleDateString();
+          document.write(date);
+          </script>
+          </div>
+          <h1>오늘의 날씨</h1>
+      </header>
+    </div>
+  <div class="container">
+      <form style=" width: 70%;  margin-left : 20%; margin-top: 50px;">
+        <input class="search__input" type="text" placeholder="Search">
+        <button type="submit" id="btn1">검색</button>
+        <ul>
+          <li>● 날씨 정보를 얻고 싶은 도시를 검색해주세요  (예:서울특별시,부산광역시 or 송파구,강남구)</li><br><br>
+          <li>● 날씨 검색 후, 버튼을 클릭하여 날씨에 어울리는 옷차림과 여행지를 확인해보세요!</li>
+        </ul>
+      
+        <span class="msg"></span>
+      </form>
+    </div>
+  </section>
+
+  <button type="button" class="retry" id="btn2" onclick="location.reload()">Reset</button>
+
+
+  
+  <section class="ajax-section">
+    
+    <div class="container">
+      <ul class="cities"><button type="button" class="wear" id="btn3" onclick="location.href='new.html';">옷 추천</button>
+        <button type="button" class="place" id="btn4" onclick="wearclick()">옷, 여행지 추천</button></ul>
+    </div>
+  </section>
+
+  
+
+  <footer class="page-footer">
+    <div class="container">
+      <small><a>멋쟁이 사자처럼 <span>❤</span> 을지대 10기 H조</a>
+      </small>
+    </div>
+  </footer>
+  <article class="kakao_ad mt-5">
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-fiECh1Z0P67tZh2d" 
+    data-ad-width   = "1920" 
+    data-ad-height  = "200"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+  </article>
+  
+  <script src="scripts.js"> </script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>

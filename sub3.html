@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300&display=swap');
+        body {
+         font-family: 'Do Hyeon', sans-serif;
+         font-size:25px;
+         background-image:url('배경_1.png');
+         height: 100%;
+        width: 100vw;
+        background-repeat : no-repeat;
+        background-size : cover;
+        overflow-x:hidden;
+     }
+     h1 {
+        font-family: 'Noto Sans KR', sans-serif;
+       font-size: 3em;
+       text-align: center;
+       color: #FFFFFF;
+       text-shadow: 5px 5px #2D63A7;
+       margin: 0;
+     }
+     h3 {
+        font-family: 'Noto Sans KR', sans-serif;
+       font-size: 20px;
+       text-align: center;
+       color: #1a1307d3;
+       
+       margin: 0;
+     }
+
+     /*배경 효과*/
+     .container {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .overlay {
+            max-height: 200px;
+            margin: 0 auto;
+            max-width: px;
+            overflow: hidden;
+            padding: 150px;
+            position: relative;
+            color: rgb(45, 44, 44);
+            font-family: 'Lato';
+            position: relative;
+            text-align: center;
+            z-index: 0;
+            font-size: large;
+        }
+        .overlay:before {
+            content: '';
+            filter: blur(20px);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .box-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .box-area li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 20s linear infinite;
+            bottom: -150px;
+        }
+        .box-area li:nth-child(1) {
+            left: 86%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        .box-area li:nth-child(2) {
+            left: 12%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 1.5s;
+            animation-duration: 10s;
+        }
+        .box-area li:nth-child(3) {
+            left: 70%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 5.5s;
+        }
+        .box-area li:nth-child(4) {
+            left: 42%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+        .box-area li:nth-child(5) {
+            left: 65%;
+            width: 40px;
+            height: 40px;
+            animation-delay: 0s;
+        }
+        .box-area li:nth-child(6) {
+            left: 15%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3.5s;
+        }
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-800px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+     
+     </style>
+</head>
+<body>
+  <br>
+    <center><h1>22도~20도</h1>
+        <h2>블라우스, 긴팔 티, 면바지, 슬랙스</h2><br><br>
+        <img src="20도.png"  width="550" height="200">
+        <h3>봄이나 가을의 온도입니다.<br>
+        일교차가 큰 봄과 가을이라 안에는 얇게 입으시고<br>
+        겉에는 가벼운 외투를 걸쳐주시면 됩니다!<br>
+         긴팔이나 얇은 소재의 가디건,셔츠,맨투맨을 추천합니다<br>
+         하의의 경우 기본 슬랙스나 청바지도 추천드립니다!<br><br><br><br>
+
+         <h1>추천 여행지</h1><br><br>
+         <img src="travel3_4.png"  width="550" height="300">
+         <img src="travel3_5.png"  width="550" height="300">
+
+         <h3>1.광양 매화마을 (전남 광양시 다압면 자막1길 55)&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             2.보령 청보리밭 (충청남도 보령시 천북면 하만리 176-6)
+        </h3>
+        <br><br>
+
+    </center>
+    </h3>
+    <div class="animation-area">
+      <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,478 @@
+@use postcss-color-function;
+@use postcss-nested;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+/* RESET STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+#btn1 {
+  background-color: aliceblue;
+  color: #1e6b7b;
+  position: absolute;
+  top: -100px;
+  left: 830px;
+  width:80px;
+  display: flex;
+  justify-content: center;
+  
+}
+#btn2{
+  background-color: aliceblue;
+  color: #1e6b7b;
+  top:215px;
+  right:195px;
+  position:absolute;
+}
+#btn3,#btn4{
+  background-color: aliceblue;
+  color: #1e6b7b;
+  top:112%;
+  right:1215px;
+  position: absolute;
+}
+
+#img {
+  margin: auto;
+  width: 230px;
+  height: 140px;
+  overflow: hidden;
+  float: right;
+}
+
+#img1 {
+  margin: auto;
+  width: 230px;
+  height: 140px;
+  overflow: hidden;
+  float: left;
+}
+#cen_img {
+  margin: auto;
+  width: 230px;
+  height: 200px;
+  overflow: hidden;
+  float: center;
+}
+
+header {
+  color: rgb(0, 0, 0);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4rem;
+  background: rgb(147, 226, 255);
+  line-height: 3frem;
+  text-align: center;
+}
+
+.date {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 15;
+  line-height: 1rem;
+  text-align: center;
+}
+
+html {
+  background: url(배경_1.png);
+  background-size:cover;
+  background-position-y: -70px;
+}
+
+:root {
+  --text_light: rgb(255, 255, 255);
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #79d3fd;
+  --darkred: #0aa4ec;
+  --orange: #ff8c00;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: border;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font: 1rem/1.3 "Roboto", sans-serif;
+  background: var(--bg_main);
+  color: var(--text_dark);
+  padding: 70px;
+}
+
+.container {
+  color: rgb(2, 2, 2);
+  width: 100%;
+  max-width: 1200px;
+  margin: 10;
+  padding: 15px;
+  text-align: center;
+}
+
+.search__input {
+  width: 100%;
+
+  padding: 10px 24px;
+  position: absolute;
+  top: -120px;
+
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #000000;
+  background-color: transparent;
+  /*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-color: white;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 50px border #070707;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.placeholder {
+  color: color(#000000 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.form {
+  text-align: center;
+}
+
+/* SECTION #1
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.top-banner {
+  color: var(--text_light);
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 0.02em;
+  padding: 0 0 30px 0;
+}
+
+.top-banner form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.top-banner form input {
+  font-size: 2rem;
+  height: 70px;
+  padding: 5px 5px 10px;
+  border-bottom: 1px solid;
+}
+
+.top-banner form input::placeholder {
+  color: currentColor;
+}
+/*검색 버튼*/
+.top-banner form button {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--red);
+  transition: background 0.3s ease-in-out;
+}
+
+.top-banner form button:hover {
+  background: var(--darkred);
+  box-shadow: rgba(31, 160, 132, 0.666) 0 0px 0px 2px inset;
+}
+
+/*다시 검색 버튼*/
+.retry {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--red);
+  transition: background 0.3s ease-in-out;
+  display: none;
+  color: black;
+}
+.retry:hover {
+  background: var(--darkred);
+  box-shadow: rgba(31, 160, 132, 0.666) 0 0px 0px 2px inset;
+}
+.retry {
+  margin: 20px 0 0 0;
+}
+
+/*옷 버튼*/
+.wear {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--red);
+  transition: background 0.3s ease-in-out;
+  display: none;
+}
+.wear:hover {
+  background: var(--darkred);
+}
+.wear {
+  margin: 20px 0 0 0;
+}
+
+/*장소 버튼*/
+.place {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--red);
+  transition: background 0.3s ease-in-out;
+  display: none;
+  
+}
+.place:hover {
+  background: var(--darkred);
+  box-shadow: rgba(31, 160, 132, 0.666) 0 0px 0px 2px inset;
+}
+.place {
+  margin: 20px 0 0 0;
+}
+
+.top-banner form .msg {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  max-width: 450px;
+  min-height: 40px;
+}
+
+/* SECTION #2
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.ajax-section {
+  margin: 5px 0 5px;
+}
+
+.ajax-section .cities {
+  margin-top:10px;
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ajax-section .city {
+  position: relative;
+  padding: 10px 20% 20%;
+  border-radius: 20px;
+  background: var(--text_light);
+  color: var(--text_med);
+}
+
+.ajax-section .city::after {
+  content: "";
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--text_light);
+}
+
+.ajax-section figcaption {
+  margin-top: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ajax-section .city-temp {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+}
+
+.ajax-section .city sup {
+ margin-top:8px;
+  font-size: 0.5em;
+}
+
+.ajax-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--text_light);
+  background: var(--orange);
+}
+
+.ajax-section .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 30px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .heading,
+  .ajax-section .city-temp {
+    font-size: 3rem;
+  }
+
+  .ajax-section {
+    margin-top: 20px;
+  }
+
+  .top-banner form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-banner form input,
+  .top-banner form button {
+    width: 100%;
+  }
+
+  .top-banner form button {
+    margin: 20px 0 0 0;
+  }
+
+  .top-banner form .msg {
+    position: static;
+    max-width: none;
+    min-height: 0;
+    margin-top: 10px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  font-size: 20px;
+  color: var(--text_light);
+  margin-top: 90px;
+  margin-left: 900px;
+}
+
+.page-footer span {
+  color: #e81232;
+}
+
+.kakao_ad {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* API Key banner
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.api {
+  background: #fffbbc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.api a {
+  text-decoration: underline;
+}
+
+.api a:hover {
+  text-decoration: none;
+}
+
+
+h1{
+font-size:30px; 
+}
+
+li{
+font-size: 20px;
+margin-top:-30px;
+font-family: 'Do Hyeon', sans-serif;
+float: left;
+}
+
+a{
+font-size: 20px;
+font-family: 'Do Hyeon', sans-serif;
+
+}
