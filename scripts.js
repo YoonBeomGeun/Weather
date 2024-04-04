@@ -10,7 +10,9 @@ const apiKey = config.apikey;
 
 
 form.addEventListener("submit", e => {
+  // 이벤트의 기본 동작을 취소 --> 폼 제출의 기본 동작을 취소하여 페이지를 새로고침하지 않음.
   e.preventDefault();
+  // '.ajax-section' 클래스 내부에 있는 '.city' 클래스를 가진 모든 요소 선택
   const listItems = list.querySelectorAll(".ajax-section .city");
   const inputVal = input.value;
   
@@ -18,7 +20,7 @@ form.addEventListener("submit", e => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
   fetch(url)
-    .then(response => response.json())
+    .then(response => response.json()) // json으로 변환
     .then(data => {
       const { main, name, sys, weather } = data;
       const icon = `https://openweathermap.org/img/wn/${
@@ -63,9 +65,9 @@ function wearclick()  {
   window.open('new.html','window1','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');
 }
 
-function placeclick()  {
-  window.open('place.html','window1', 'menubar=yes');
-}
+// function placeclick()  {
+//   window.open('place.html','window1', 'menubar=yes');
+// }
 
 /*function click() {
   
