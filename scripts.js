@@ -61,26 +61,7 @@ form.addEventListener("submit", e => {
   input.focus();
 });
 
+// 옷, 여행지 추천 버튼 클릭
 function wearclick()  {
   window.open('new.html','window1','height=' + screen.height + ',width=' + screen.width + 'fullscreen=yes');
 }
-
-// function placeclick()  {
-//   window.open('place.html','window1', 'menubar=yes');
-// }
-
-/*function click() {
-  
-  // 토글 할 버튼 선택 (btn1)
-  const btn1 = document.getElementById('btn1');
-  
-  // btn1 숨기기 (display: none)
-  if(btn2.style.display == 'none') {
-        btn2.style.display = 'block';
-      }
-      // btn` 보이기 (display: block)
-      else {
-        btn2.style.display = 'none';
-      }
-  
-}*/
